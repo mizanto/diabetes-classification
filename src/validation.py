@@ -1,15 +1,10 @@
 def validate_predict(data):
     fields = [
         'age', 'gender', 'polyuria', 'polydipsia', 'sudden_weight_loss',
-        'weakness', 'polyphagia', 'visual_blurring', 'irritability',
-        'partial_paresis', 'muscle_stiffness', 'alopecia'
+        'polyphagia', 'irritability', 'partial_paresis'
     ]
 
-    boolean_fields = [
-        'polyuria', 'polydipsia', 'sudden_weight_loss', 'weakness',
-        'polyphagia', 'visual_blurring', 'irritability', 'partial_paresis',
-        'muscle_stiffness', 'alopecia'
-    ]
+    boolean_fields = fields[2:]
 
     missing_fields = [field for field in fields if field not in data]
     if missing_fields:
