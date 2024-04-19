@@ -1,11 +1,13 @@
 import os
 from flask import Flask, request, jsonify, abort
 
-from model_trainer import load_model, create_model, predict
-from validation import validate_predict
+from src.model_trainer import load_model, create_model, predict
+from src.validation import validate_predict
 
 
-MODEL_FILE_PATH = '../models/diabetes_model.pkl'
+current_dir = os.path.dirname(__file__)
+project_root = os.path.dirname(current_dir)
+MODEL_FILE_PATH = os.path.join(project_root, 'models', 'diabetes_model.pkl')
 
 app = Flask(__name__)
 
@@ -32,13 +34,9 @@ def predict_diabetes():
         - polydipsia (bool): Whether the patient has polydipsia.
         - sudden_weight_loss (bool): Whether the patient has sudden weight
             loss.
-        - weakness (bool): Whether the patient has weakness.
         - polyphagia (bool): Whether the patient has polyphagia.
-        - visual_blurring (bool): Whether the patient has visual blurring.
         - irritability (bool): Whether the patient has irritability.
         - partial_paresis (bool): Whether the patient has partial paresis.
-        - muscle_stiffness (bool): Whether the patient has muscle stiffness.
-        - alopecia (bool): Whether the patient has alopecia.
     """
     try:
         validate_predict(request.json)
@@ -52,7 +50,7 @@ def predict_diabetes():
 
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(debug=True)
 
 
 # Test JSON
