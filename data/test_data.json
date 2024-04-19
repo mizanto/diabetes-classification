@@ -4,11 +4,7 @@
     "polyuria": true,
     "polydipsia": false,
     "sudden_weight_loss": true,
-    "weakness": false,
-    "polyphagia": true,
-    "visual_blurring": false,
     "irritability": true,
-    "partial_paresis": false,
-    "muscle_stiffness": true,
-    "alopecia": false
+    "polyphagia": false,
+    "partial_paresis": false
 }
