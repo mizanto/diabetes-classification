@@ -57,6 +57,6 @@ Response:
 
 ```json
 {
-    "prediction": "Positive"
+    "prediction": true
 }
 ```
